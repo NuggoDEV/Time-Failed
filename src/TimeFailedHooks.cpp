@@ -31,37 +31,28 @@ std::string SecondsToString(float value)
 
 int endTime;
 int timeFailed;
-GameObject *container;
 TMPro::TextMeshProUGUI *timeFailedText;
 
 MAKE_AUTO_HOOK_MATCH(ResultsViewController_DidActivate, &ResultsViewController::DidActivate, void, ResultsViewController* self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
     ResultsViewController_DidActivate(self, firstActivation, addedToHierarchy, screenSystemEnabling);
 
-    if (firstActivation)
+    if (firstActivation && timeFailed < endTime)
     {
-        container = BeatSaberUI::CreateFloatingScreen({0, 0}, {0, 0.95, 4.1}, {0, 0, 0}, 0.0f, false, false);
-        timeFailedText = BeatSaberUI::CreateText(container->get_transform(), "");
+        timeFailedText = BeatSaberUI::CreateText(self->get_transform(), "", false, {0.1, -12.5});
         timeFailedText->set_alignment(TMPro::TextAlignmentOptions::Center);
         timeFailedText->set_fontSize(6.0f);
         getLogger().info("Created text");
     }
-    container->SetActive(false);
 
-    if (timeFailed != endTime)
+    if (timeFailed < endTime)
     {
-        container->set_active(true);
         timeFailedText->set_text("Failed at: " + SecondsToString(timeFailed) + " / " + SecondsToString(endTime));
     }
-
-}
-
-MAKE_AUTO_HOOK_MATCH(ResultsViewController_DidDeactivate, &ResultsViewController::DidDeactivate, void, ResultsViewController* self, bool removedFromHierarchy, bool systemScreenDisabling) {
-    ResultsViewController_DidDeactivate(self, removedFromHierarchy, systemScreenDisabling);
-
-    if (timeFailed != endTime)
+    else if (timeFailed == endTime)
     {
-        container->set_active(false);
+        timeFailedText->set_text("");
     }
+
 }
 
 MAKE_AUTO_HOOK_MATCH(AudioTimeSyncController_Update, &AudioTimeSyncController::Update, void, AudioTimeSyncController* self) {
