@@ -40,7 +40,7 @@ MAKE_AUTO_HOOK_MATCH(ResultsViewController_DidActivate, &ResultsViewController::
     
     if (firstActivation)
     {
-        container = BeatSaberUI::CreateFloatingScreen({0, 0}, {0, 0.9, 4.1}, {0, 0, 0}, 0.0f, false, false);
+        container = BeatSaberUI::CreateFloatingScreen({0, 0}, {0, 0.92, 4.1}, {0, 0, 0}, 0.0f, false, false);
         timeFailedText = BeatSaberUI::CreateText(container->get_transform(), "Failed at: " + SecondsToString(timeFailed) + " / " + SecondsToString(endTime));
         timeFailedText->set_alignment(TMPro::TextAlignmentOptions::Center);
         timeFailedText->set_fontSize(6.0f);
