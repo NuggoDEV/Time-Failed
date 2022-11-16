@@ -60,5 +60,4 @@ MAKE_AUTO_HOOK_MATCH(AudioTimeSyncController_Update, &AudioTimeSyncController::U
 
     endTime = self->get_songEndTime();
     timeFailed = self->songTime;
-    getLogger().info("Updated time");
 }
