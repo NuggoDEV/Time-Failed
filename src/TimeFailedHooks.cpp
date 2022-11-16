@@ -36,7 +36,7 @@ TMPro::TextMeshProUGUI *timeFailedText;
 MAKE_AUTO_HOOK_MATCH(ResultsViewController_DidActivate, &ResultsViewController::DidActivate, void, ResultsViewController* self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
     ResultsViewController_DidActivate(self, firstActivation, addedToHierarchy, screenSystemEnabling);
 
-    if (firstActivation && timeFailed < endTime)
+    if (firstActivation)
     {
         timeFailedText = BeatSaberUI::CreateText(self->get_transform(), "", false, {0.1, -12.5});
         timeFailedText->set_alignment(TMPro::TextAlignmentOptions::Center);
