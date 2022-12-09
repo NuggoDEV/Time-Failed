@@ -12,32 +12,28 @@
   },
   "dependencies": [
     {
-      "id": "beatsaber-hook",
-      "versionRange": "^3.8.0",
-      "additionalData": {
-        "extraFiles": [
-          "src/inline-hook"
-        ]
-      }
-    },
-    {
       "id": "modloader",
       "versionRange": "=1.2.3",
       "additionalData": {}
     },
     {
-      "id": "codegen",
-      "versionRange": "=0.28.0",
+      "id": "questui",
+      "versionRange": "^0.17.9",
       "additionalData": {}
     },
     {
-      "id": "questui",
-      "versionRange": "=0.17.5",
+      "id": "codegen",
+      "versionRange": "^0.31.0",
       "additionalData": {}
     },
     {
       "id": "custom-types",
-      "versionRange": "=0.15.21",
+      "versionRange": "^0.15.22",
+      "additionalData": {}
+    },
+    {
+      "id": "beatsaber-hook",
+      "versionRange": "^3.14.0",
       "additionalData": {}
     }
   ],
