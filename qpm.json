@@ -17,13 +17,8 @@
       "additionalData": {}
     },
     {
-      "id": "questui",
-      "versionRange": "^0.17.9",
-      "additionalData": {}
-    },
-    {
-      "id": "codegen",
-      "versionRange": "^0.31.0",
+      "id": "beatsaber-hook",
+      "versionRange": "^3.14.0",
       "additionalData": {}
     },
     {
@@ -32,8 +27,13 @@
       "additionalData": {}
     },
     {
-      "id": "beatsaber-hook",
-      "versionRange": "^3.14.0",
+      "id": "codegen",
+      "versionRange": "^0.32.0",
+      "additionalData": {}
+    },
+    {
+      "id": "questui",
+      "versionRange": "^0.17.10",
       "additionalData": {}
     }
   ],
